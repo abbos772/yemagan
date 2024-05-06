@@ -15,6 +15,7 @@ function Create() {
     <div>
       <form onSubmit={handleCreate} action="">
         <input
+          placeholder="Home ga tushadi"
           className="inp"
           value={data.name}
           onChange={(e) =>
