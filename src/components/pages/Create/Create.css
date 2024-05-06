@@ -1,0 +1,14 @@
+.btn_s {
+  background-color: brown;
+}
+.inp {
+  width: 400px;
+  height: 40px;
+  border-radius: 5px;
+  margin: 20px;
+}
+form {
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 50px;
+}

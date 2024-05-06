@@ -26,9 +26,11 @@ function Navbar() {
           <div className={`nav_bot_flex ${toggle ? "show" : " "}`}>
             <h2>Home</h2>
             <NavLink to={"/About"}>
+              <Button variant="contained">Manage Product</Button>
+            </NavLink>
+            <NavLink to={"/Create"}>
               <Button variant="contained">Create Product</Button>
             </NavLink>
-            <Button variant="contained">Manage Product</Button>
           </div>
           <div className="navbar__search">
             <input type="text" placeholder="Search..." />

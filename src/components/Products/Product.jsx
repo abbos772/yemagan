@@ -37,6 +37,5 @@ export default function MediaCard() {
       </CardActions>
     </Card>
   ));
-
   return <div className="wrapper">{Products}</div>;
 }
