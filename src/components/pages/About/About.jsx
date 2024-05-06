@@ -9,16 +9,20 @@ import axios from "../../../api/Index";
 import "../About/About.css";
 export default function MediaCard() {
   const [data, setData] = useState(null);
+  const [reload, setReload] = useState(false);
   useEffect(() => {
     axios
       .get("/products")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
-  }, []);
+  }, [reload]);
 
   const handleDelete = (id) => {
     if (window.confirm("Are you sure")) {
-      axios.delete(`/products/${id}`);
+      axios.delete(`/products/${id}`).then((res) => {
+        setReload((p) => !p);
+        console.log(res);
+      });
     }
   };
   const Products = data?.map((product) => (
@@ -39,8 +43,8 @@ export default function MediaCard() {
       </CardContent>
       <CardActions>
         <Button
-          className="delete"
           onClick={() => handleDelete(product.id)}
+          style={{ background: "red", color: "white" }}
           size="small"
         >
           Delete
