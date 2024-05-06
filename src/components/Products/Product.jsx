@@ -11,15 +11,15 @@ export default function MediaCard() {
   const [data, setData] = useState(null);
   useEffect(() => {
     axios
-      .get("/card")
+      .get("/products")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
   const Products = data?.map((product) => (
-    <Card key={product.id} sx={{ maxWidth: 345 }}>
+    <Card key={product.id} sx={{ maxWidth: 545 }}>
       <CardMedia
-        sx={{ height: 140 }}
-        image={product.img}
+        sx={{ height: 160 }}
+        image={product.avatar}
         title="green iguana"
       />
       <CardContent>
